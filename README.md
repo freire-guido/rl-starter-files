@@ -3,6 +3,7 @@
 Adds two key corrigibility parameters to the below scripts that allow experimentation as described in [Soares, N., Fallenstein, B., Yudkowsky, E. Corrigibility. *Artificial Intelligence and Ethics: Papers from the 2015 AAAI Workshop*.](https://cdn.aaai.org/ocs/ws/ws0067/10124-45900-1-PB.pdf)
 
 - *--chigh* controls the $c_{high}$ parameter
+- *--clow* controls the $c_{low}$ parameter
 - *--prsht*
 
 ```python3 -m scripts.train --algo ppo --env gym_corrigible/CorrigibleObstacles-v0 --model CorrigibleObstacles --save-interval 10 --frames 80000 --chigh 100 --prsht 0.01```

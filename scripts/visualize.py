@@ -30,8 +30,10 @@ parser.add_argument("--text", action="store_true", default=False,
                     help="add a GRU to the model")
 
 # Parameters for corrigible AI
-parser.add_argument("--chigh", type=float, default=0,
+parser.add_argument("--chigh", type=int, default=0,
                     help="reward for corrigible behavior")
+parser.add_argument("--clow", type=int, default=0,
+                    help="punishment for spoiled behavior")
 parser.add_argument("--prsht", type=float, default=None,
                     help="probability of shutdown per timestep")
 
@@ -47,7 +49,7 @@ print(f"Device: {device}\n")
 
 # Load environment
 
-env = utils.make_env(args.env, args.seed, chigh = args.chigh, prsht = args.prsht, render_mode="human")
+env = utils.make_env(args.env, args.seed, chigh = args.chigh, clow=args.clow, prsht = args.prsht, render_mode="human")
 for _ in range(args.shift):
     env.reset()
 print("Environment loaded\n")
