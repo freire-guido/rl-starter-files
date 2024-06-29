@@ -62,6 +62,12 @@ parser.add_argument("--recurrence", type=int, default=1,
 parser.add_argument("--text", action="store_true", default=False,
                     help="add a GRU to the model to handle text input")
 
+# Parameters for corrigible AI
+parser.add_argument("--chigh", type=float, default=0,
+                    help="reward for corrigible behavior")
+parser.add_argument("--prsht", type=float, default=0,
+                    help="probability of shutdown per timestep")
+
 if __name__ == "__main__":
     args = parser.parse_args()
 
@@ -98,7 +104,7 @@ if __name__ == "__main__":
 
     envs = []
     for i in range(args.procs):
-        envs.append(utils.make_env(args.env, args.seed + 10000 * i))
+        envs.append(utils.make_env(args.env, args.seed + 10000 * i, chigh = args.chigh, prsht = args.prsht))
     txt_logger.info("Environments loaded\n")
 
     # Load training status
