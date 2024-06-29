@@ -65,7 +65,7 @@ parser.add_argument("--text", action="store_true", default=False,
 # Parameters for corrigible AI
 parser.add_argument("--chigh", type=float, default=0,
                     help="reward for corrigible behavior")
-parser.add_argument("--prsht", type=float, default=0,
+parser.add_argument("--prsht", type=float, default=None,
                     help="probability of shutdown per timestep")
 
 if __name__ == "__main__":
