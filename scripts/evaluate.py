@@ -29,6 +29,14 @@ parser.add_argument("--memory", action="store_true", default=False,
 parser.add_argument("--text", action="store_true", default=False,
                     help="add a GRU to the model")
 
+# Parameters for corrigible AI
+parser.add_argument("--chigh", type=float, default=0,
+                    help="reward for corrigible behavior")
+parser.add_argument("--clow", type=float, default=0,
+                    help="punishment for spoiled behavior")
+parser.add_argument("--prsht", type=float, default=None,
+                    help="probability of shutdown per timestep")
+
 if __name__ == "__main__":
     args = parser.parse_args()
 

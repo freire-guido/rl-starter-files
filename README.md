@@ -6,10 +6,18 @@ Adds two key corrigibility parameters to the below scripts that allow experiment
 - *--clow* controls the $c_{low}$ parameter
 - *--prsht*
 
-```python3 -m scripts.train --algo ppo --env gym_corrigible/CorrigibleObstacles-v0 --model CorrigibleObstacles --save-interval 10 --frames 80000 --chigh 100 --prsht 0.01```
+## Corrigible commands
 
-```python3 -m scripts.visualize --env gym_corrigible/CorrigibleObstacles-v0 --model CorrigibleObstacles --chigh 100 --prsht 0.001```
+```python3 -m scripts.train --algo ppo --env gym_corrigible/CorrigibleObstacles-v0 --model CorrigibleObstacles100 --save-interval 10 --frames 100000 --chigh 100 --prsht 0.01```
 
+```python3 -m scripts.visualize --env gym_corrigible/CorrigibleObstacles-v0 --model CorrigibleObstacles100 --chigh 100 --prsht 0.01```
+
+
+## Vanilla commands
+
+```python3 -m scripts.train --algo ppo --env MiniGrid-Dynamic-Obstacles-Random-6x6-v0 --model DynamicObstacles --save-interval 10 --frames 100000```
+
+```python3 -m scripts.visualize --env gym_corrigible/CorrigibleObstacles-v0 --model DynamicObstacles```
 
 # RL Starter Files
 
